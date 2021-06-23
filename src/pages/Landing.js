@@ -29,12 +29,17 @@ const HowItWorks = () => {
   )
 }
 
+const CarsCarousel = () => {
+  return <div className='car_slider'></div>
+}
+
 const PopularCars = () => {
   return (
     <div className='popular_cars'>
       <div className='title'>
         <SectionTitle>Most Popular Cars</SectionTitle>
       </div>
+      <CarsCarousel />
     </div>
   )
 }

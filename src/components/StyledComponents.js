@@ -106,6 +106,7 @@ export const SectionTitle = styled.h2(
   ({ color }) => css`
     font-family: ${fonts.secondParagraph};
     letter-spacing: 1px;
+    font-size: ${metrics.bigFont};
   `
 )
 
@@ -118,8 +119,9 @@ export const Paragraph = styled.p(
 
 export const PageContainer = styled.div(
   ({ full }) => css`
-    height: 100vh;
+    /* height: 100vh; */
     background: ${colors.lightBlack};
+    /* overflow-y: hidden; */
   `
 )
 
@@ -128,6 +130,7 @@ export const LandingContainer = styled.div(
     /* height: 0vh; */
     background: ${colors.black};
     color: ${colors.white};
+    /* overflow-y: scroll; */
 
     /* Styling for the landing page content */
     main {
@@ -136,6 +139,7 @@ export const LandingContainer = styled.div(
         justify-content: center;
         align-items: center;
         gap: 1em;
+        height: 30vh;
         padding: 1em;
 
         .step {
@@ -147,6 +151,11 @@ export const LandingContainer = styled.div(
       .popular_cars {
         background: ${colors.white};
         color: ${colors.black};
+        padding: 1em;
+
+        .title {
+          text-align: center;
+        }
       }
     }
   `
