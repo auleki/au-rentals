@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { colors, metrics } from '../components/constants'
+import { colors, fonts, metrics } from '../components/constants'
 
 export const HeaderStyle = styled.div(
   ({ bgImage }) => css`
@@ -16,12 +16,39 @@ export const HeaderStyle = styled.div(
 
     .header_text {
       text-align: center;
+
+      h1 {
+        font-family: ${fonts.heading};
+        font-size: ${metrics.biggerFont};
+
+        span {
+          color: ${colors.orange};
+        }
+      }
+
+      p {
+        /* background: #e85d0460; */
+        background: #1a1a1a60;
+        display: inline-flex;
+        padding: 0.5em;
+        margin: 0.5em 0;
+        font-family: ${fonts.general};
+        font-size: ${metrics.mediumFont};
+        letter-spacing: 1px;
+        color: ${colors.ghostWhite};
+        border-radius: ${metrics.radius};
+
+        span {
+          font-weight: 800;
+          margin: 0 0.25em;
+        }
+      }
     }
 
     .header_form {
       display: flex;
       gap: 1em;
-      margin-top: 1em;
+      margin-top: 3em;
     }
   `
 )
@@ -32,6 +59,7 @@ export const InputStyle = styled.input(
     /* height: 4em; */
     padding: 1em;
     background: ${colors.black};
+    font-family: ${fonts.paragraph};
     color: ${colors.altWhite};
     outline: 0;
     border-radius: ${metrics.radius};
@@ -48,6 +76,7 @@ export const Button = styled.button(
     background: ${colors.orange};
     color: ${colors.altWhite};
     padding: 1em 1.5em;
+    font-family: ${fonts.paragraph};
     transition: background 200ms ease-in, color 300ms ease-in;
     border-radius: ${metrics.radius};
     font-size: ${metrics.smallFont};
@@ -68,6 +97,8 @@ export const Button = styled.button(
 export const Title = styled.h1(
   ({ font, color }) => css`
     color: ${colors.altWhite};
+    letter-spacing: 2px;
+    font-family: ${fonts.heading};
   `
 )
 

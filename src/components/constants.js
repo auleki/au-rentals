@@ -1,5 +1,10 @@
 export const fonts = {
-  // yet to be added
+  heading: 'Dela Gothic One',
+  paragraph: 'Nanum Gothic Coding',
+  handwriting: 'Satisfy',
+  general: 'Assistant',
+  secondParagraph: 'Big Shoulders Stencil Display',
+  extra: 'Hammersmith'
 }
 
 export const colors = {
@@ -27,7 +32,9 @@ export const colors = {
 export const metrics = {
   radius: '0.15em',
   smallFont: '1em',
+  midSmallFont: '1.3em',
   mediumFont: '1.5em',
   bigFont: '2.5em',
+  biggerFont: '3.5em',
   border: '.2em'
 }
