@@ -1,5 +1,13 @@
 import { LandingContainer, SectionTitle } from '../components/StyledComponents'
 import Header from '../layout/Header'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { EffectCube, Pagination } from 'swiper/core'
+import 'swiper/swiper.min.css'
+import 'swiper/components/effect-cube/effect-cube.min.css'
+import 'swiper/components/pagination/pagination.min.css'
+
+// INITIALIZATIONS
+SwiperCore.use([EffectCube, Pagination])
 
 const HowItWorks = () => {
   return (
@@ -30,7 +38,33 @@ const HowItWorks = () => {
 }
 
 const CarsCarousel = () => {
-  return <div className='car_slider'></div>
+  return (
+    <Swiper
+      effect={'cube'}
+      grabCursor={true}
+      cubeEffect={{
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 30,
+        shadowScale: 2
+      }}
+      pagination={true}
+      className='mySwiper'
+    >
+      <SwiperSlide>
+        <img src='https://swiperjs.com/demos/images/nature-1.jpg' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src='https://swiperjs.com/demos/images/nature-2.jpg' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src='https://swiperjs.com/demos/images/nature-3.jpg' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src='https://swiperjs.com/demos/images/nature-4.jpg' />
+      </SwiperSlide>
+    </Swiper>
+  )
 }
 
 const PopularCars = () => {

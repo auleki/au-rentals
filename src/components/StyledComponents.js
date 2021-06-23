@@ -6,8 +6,9 @@ export const HeaderStyle = styled.div(
     height: 80vh;
     background: linear-gradient(to right, #1a1a1a50, #f3790720),
       url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624443336/car-rental/kevin-bonilla-YPfnvLc3bbQ-unsplash_i0iiop.jpg')
-        fixed bottom no-repeat;
+        scroll center no-repeat;
     background-size: cover;
+    /* background-attachment: ; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,6 +156,23 @@ export const LandingContainer = styled.div(
 
         .title {
           text-align: center;
+        }
+
+        .swiper-container {
+          width: 30em;
+          height: 100%;
+          /* background-color: ${colors.darkGreen}; */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .swiper-slide {
+          img {
+            width: 100%;
+            display: block;
+          }
         }
       }
     }
