@@ -9,7 +9,6 @@ import {
 const Header = () => {
   const findCar = e => {
     e.preventDefault()
-    alert('We in')
   }
 
   return (

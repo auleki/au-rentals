@@ -12,36 +12,54 @@ export const HeaderStyle = styled.div(
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid ${colors.orange};
+
+    .header_text {
+      text-align: center;
+    }
 
     .header_form {
       display: flex;
       gap: 1em;
+      margin-top: 1em;
     }
   `
 )
 
 export const InputStyle = styled.input(
   ({ bgColor }) => css`
+    /* width: 100%; */
+    /* height: 4em; */
     padding: 1em;
     background: ${colors.black};
     color: ${colors.altWhite};
     outline: 0;
     border-radius: ${metrics.radius};
+    transition: background 200ms ease-in;
+
+    &:focus {
+      background: ${colors.lightBlack};
+    }
   `
 )
 
 export const Button = styled.button(
   ({ bgColor }) => css`
-    background: ${colors.lightBlack};
+    background: ${colors.orange};
     color: ${colors.altWhite};
-    padding: 1em;
-    transition: background 300ms ease-in;
+    padding: 1em 1.5em;
+    transition: background 200ms ease-in, color 300ms ease-in;
     border-radius: ${metrics.radius};
     font-size: ${metrics.smallFont};
+    border: ${metrics.border} solid transparent;
+    outline: 0;
 
-    &:hover {
-      background: orange;
+    &:hover,
+    &:focus {
+      background: ${colors.ghostWhite};
+      outline: 0;
+      border: ${metrics.border} solid ${colors.orange};
+      color: ${colors.orange};
       cursor: pointer;
     }
   `
@@ -56,7 +74,7 @@ export const Title = styled.h1(
 export const Paragraph = styled.p(
   ({ font, size, color }) => css`
     font-size: ${size || 1}em;
-    color: ${colors.lightPurple};
+    color: ${colors.orange};
   `
 )
 
