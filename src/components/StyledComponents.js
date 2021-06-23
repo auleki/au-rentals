@@ -102,6 +102,13 @@ export const Title = styled.h1(
   `
 )
 
+export const SectionTitle = styled.h2(
+  ({ color }) => css`
+    font-family: ${fonts.secondParagraph};
+    letter-spacing: 1px;
+  `
+)
+
 export const Paragraph = styled.p(
   ({ font, size, color }) => css`
     font-size: ${size || 1}em;
@@ -119,6 +126,28 @@ export const PageContainer = styled.div(
 export const LandingContainer = styled.div(
   ({ full }) => css`
     /* height: 0vh; */
-    background: ${colors.midGreen};
+    background: ${colors.black};
+    color: ${colors.white};
+
+    /* Styling for the landing page content */
+    main {
+      .how_it_works {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding: 1em;
+
+        .step {
+          width: 20em;
+          background: ${colors.red};
+        }
+      }
+
+      .popular_cars {
+        background: ${colors.white};
+        color: ${colors.black};
+      }
+    }
   `
 )
