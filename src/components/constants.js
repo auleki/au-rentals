@@ -46,7 +46,8 @@ export const popularCars = [
       'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624541726/car-rental/toyota-camry-removebg-preview_nd9518.png',
     maxSpeed: 300,
     automaticTransmission: true,
-    fuel: 'Petrol'
+    fuel: 'Petrol',
+    pricePerDay: 8000
   },
   {
     modelName: 'Honda Civic 2010',
@@ -54,7 +55,8 @@ export const popularCars = [
       'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624540452/car-rental/honda-civic-removebg-preview_s9l3bz.png',
     maxSpeed: 206,
     automaticTransmission: true,
-    fuel: 'Petrol'
+    fuel: 'Petrol',
+    pricePerDay: 6500
   },
   {
     modelName: 'Volkswagen Golf 2010',
@@ -62,7 +64,8 @@ export const popularCars = [
       'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624541941/car-rental/volkswagen-removebg-preview_bfwmlb.png',
     maxSpeed: 125,
     automaticTransmission: false,
-    fuel: 'Petrol'
+    fuel: 'Petrol',
+    pricePerDay: 4000
   },
   {
     modelName: 'Honda Accord 2012',
@@ -70,6 +73,7 @@ export const popularCars = [
       'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624542292/car-rental/honda-accord-removebg-preview_nlmy60.png',
     maxSpeed: 238,
     automaticTransmission: true,
-    fuel: 'Petrol'
+    fuel: 'Petrol',
+    pricePerDay: 6000
   }
 ]

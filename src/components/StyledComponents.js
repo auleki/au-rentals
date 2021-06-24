@@ -137,6 +137,7 @@ export const LandingContainer = styled.div(
     main {
       .how_it_works {
         display: flex;
+        font-family: ${fonts.general};
         justify-content: center;
         align-items: center;
         gap: 1em;
@@ -144,24 +145,36 @@ export const LandingContainer = styled.div(
         padding: 1em;
 
         .step {
-          width: 20em;
-          background: ${colors.red};
+          width: 22em;
+          background: ${colors.lightBlack};
+          border-radius: ${metrics.radius};
+          color: ${colors.ghostWhite};
+          padding: 1em;
+          margin-top: 2em;
         }
       }
 
       .popular_cars {
         background: ${colors.white};
+        /* background: ${colors.black}; */
         color: ${colors.black};
         padding: 1em;
 
         .title {
           text-align: center;
+          padding: 2em 0;
         }
 
+        // STYLING FOR THE SWIPER CONTAINER 
+
         .swiper-container {
-          width: 30em;
-          height: 100%;
-          /* background-color: ${colors.darkGreen}; */
+          width: 25em;
+          /* height: 100%; */
+          background-color: ${colors.altWhite};
+          color: ${colors.white};
+          border-radius: ${metrics.radius};
+          padding: 3em 0;
+          text-align: center;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -169,10 +182,15 @@ export const LandingContainer = styled.div(
         }
 
         .swiper-slide {
+          color: ${colors.black};
+
           img {
+            object-fit: cover;
             width: 100%;
             display: block;
           }
+
+
         }
       }
     }

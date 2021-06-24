@@ -2,6 +2,7 @@ import { LandingContainer, SectionTitle } from '../components/StyledComponents'
 import Header from '../layout/Header'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { EffectCube, Pagination } from 'swiper/core'
+import { popularCars } from '../components/constants'
 import 'swiper/swiper.min.css'
 import 'swiper/components/effect-cube/effect-cube.min.css'
 import 'swiper/components/pagination/pagination.min.css'
@@ -37,21 +38,43 @@ const HowItWorks = () => {
   )
 }
 
+const Car = ({ car }) => {
+  return (
+    <SwiperSlide>
+      <h2>Cars</h2>
+      <h2>Cars</h2>
+      <h2>Cars</h2>
+      <h2>Cars</h2>
+      {/* <p>{car.modelName}</p>
+      <img src={car.carImage} alt='' srcset='' />
+      <p>Max Speed: {car.maxSpeed}</p>
+      <p>Fuel: {car.fuel}</p> */}
+    </SwiperSlide>
+  )
+}
+
 const CarsCarousel = () => {
   return (
     <Swiper
       effect={'cube'}
       grabCursor={true}
       cubeEffect={{
-        shadow: true,
-        slideShadows: true,
+        shadow: false,
+        slideShadows: false,
         shadowOffset: 30,
-        shadowScale: 2
+        shadowScale: 0.1
       }}
       pagination={true}
       className='mySwiper'
     >
-      {/* MAP THROUGH POPULAR CARS  */}
+      {popularCars.map(car => (
+        <SwiperSlide>
+          <p>{car.modelName}</p>
+          <img src={car.carImage} alt='car' srcset='' />
+          <p>Max Speed: {car.maxSpeed}</p>
+          <p>Fuel: {car.fuel}</p>
+        </SwiperSlide>
+      ))}
     </Swiper>
   )
 }
