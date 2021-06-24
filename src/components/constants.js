@@ -38,3 +38,38 @@ export const metrics = {
   biggerFont: '3.5em',
   border: '.2em'
 }
+
+export const popularCars = [
+  {
+    modelName: 'Toyota Camry 2010',
+    carImage:
+      'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624541726/car-rental/toyota-camry-removebg-preview_nd9518.png',
+    maxSpeed: 300,
+    automaticTransmission: true,
+    fuel: 'Petrol'
+  },
+  {
+    modelName: 'Honda Civic 2010',
+    carImage:
+      'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624540452/car-rental/honda-civic-removebg-preview_s9l3bz.png',
+    maxSpeed: 206,
+    automaticTransmission: true,
+    fuel: 'Petrol'
+  },
+  {
+    modelName: 'Volkswagen Golf 2010',
+    carImage:
+      'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624541941/car-rental/volkswagen-removebg-preview_bfwmlb.png',
+    maxSpeed: 125,
+    automaticTransmission: false,
+    fuel: 'Petrol'
+  },
+  {
+    modelName: 'Honda Accord 2012',
+    carImage:
+      'https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624542292/car-rental/honda-accord-removebg-preview_nlmy60.png',
+    maxSpeed: 238,
+    automaticTransmission: true,
+    fuel: 'Petrol'
+  }
+]
