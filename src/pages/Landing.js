@@ -1,4 +1,8 @@
-import { LandingContainer, SectionTitle } from '../components/StyledComponents'
+import {
+  LandingContainer,
+  SectionTitle,
+  Button
+} from '../components/StyledComponents'
 import Header from '../layout/Header'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { EffectCube, Pagination } from 'swiper/core'
@@ -38,21 +42,6 @@ const HowItWorks = () => {
   )
 }
 
-const Car = ({ car }) => {
-  return (
-    <SwiperSlide>
-      <h2>Cars</h2>
-      <h2>Cars</h2>
-      <h2>Cars</h2>
-      <h2>Cars</h2>
-      {/* <p>{car.modelName}</p>
-      <img src={car.carImage} alt='' srcset='' />
-      <p>Max Speed: {car.maxSpeed}</p>
-      <p>Fuel: {car.fuel}</p> */}
-    </SwiperSlide>
-  )
-}
-
 const CarsCarousel = () => {
   return (
     <Swiper
@@ -69,10 +58,19 @@ const CarsCarousel = () => {
     >
       {popularCars.map(car => (
         <SwiperSlide>
-          <p>{car.modelName}</p>
+          <p className='model'>{car.modelName}</p>
           <img src={car.carImage} alt='car' srcset='' />
-          <p>Max Speed: {car.maxSpeed}</p>
-          <p>Fuel: {car.fuel}</p>
+          <div className='info'>
+            <p className='speed'>Max Speed: {car.maxSpeed} / km</p>
+            <p className='fuel'>Fuel: {car.fuel}</p>
+          </div>
+          <div className='actions'>
+            <section className='price_section'>
+              <p className='price'>N{car.pricePerDay}</p>
+              <span>per day</span>
+            </section>
+            <Button>Rent a car</Button>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

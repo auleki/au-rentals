@@ -76,8 +76,8 @@ export const Button = styled.button(
   ({ bgColor }) => css`
     background: ${colors.orange};
     color: ${colors.altWhite};
-    padding: 1em 1.5em;
-    font-family: ${fonts.paragraph};
+    padding: 0.8em 1.5em;
+    font-family: ${fonts.general};
     transition: background 200ms ease-in, color 300ms ease-in;
     border-radius: ${metrics.radius};
     font-size: ${metrics.smallFont};
@@ -169,11 +169,10 @@ export const LandingContainer = styled.div(
 
         .swiper-container {
           width: 25em;
-          /* height: 100%; */
-          background-color: ${colors.altWhite};
+          background-color: ${colors.lightBlack};
           color: ${colors.white};
           border-radius: ${metrics.radius};
-          padding: 3em 0;
+          padding: 5em 0 1em;
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -182,14 +181,47 @@ export const LandingContainer = styled.div(
         }
 
         .swiper-slide {
-          color: ${colors.black};
+          color: ${colors.white};
+
+          .actions {
+            margin: 3em 0 1em;
+          }
+
+          .info, .actions {
+            display: flex;
+            align-items: center;
+            font-family: ${fonts.paragraph};
+            justify-content: space-around;
+          }
+
+          .model {
+            font-family: ${fonts.secondParagraph};
+            font-size: ${metrics.bigFont};
+            color: ${colors.orange};
+            font-weight: 400;
+          }
+
+          .price_section {
+            /* font-size: ${metrics.bigFont}; */
+            display: flex;
+            flex-direction: column;
+            
+            .price {
+              font-size: ${metrics.bigFont};
+            }
+
+            span {
+              color: ${colors.lightOrange};
+              align-self: flex-end;
+            }
+            
+          }
 
           img {
             object-fit: cover;
             width: 100%;
             display: block;
           }
-
 
         }
       }
