@@ -122,7 +122,7 @@ export const PageContainer = styled.div(
   ({ full }) => css`
     /* height: 100vh; */
     background: ${colors.lightBlack};
-    /* overflow-y: hidden; */
+    overflow-x: hidden;
   `
 )
 
@@ -228,3 +228,56 @@ export const LandingContainer = styled.div(
     }
   `
 )
+
+export const Container = styled.section(
+  () => css`
+    /* border: 1px solid green; */
+    background-color: white;
+    color: black;
+    padding: 1rem;
+  `
+)
+
+export const TitleContainer = styled.div(
+  () => css`
+    text-align: center;
+  `
+)
+
+export const SWhyUs = styled.section(
+  () => css`
+    background-color: white;
+    color: black;
+    padding: 1rem;
+
+    .reasons {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 1rem;
+      /* gap: 1rem; */
+    }
+
+    .reason {
+      height: 200px;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: .5px solid #E2E2E2;
+      
+      .icon {
+        padding: 1rem;
+        border-radius: 1rem;
+        background: #5EF81150;
+        font-weight: 800;
+        display: inline-flex;
+      }
+      
+      p {
+        font-weight: bold;
+        /* position: fixed; */
+        bottom: 0;
+      }
+    }
+  `
+)
+
+

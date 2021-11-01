@@ -1,3 +1,5 @@
+import * as RIcons from 'react-icons/ri'
+
 export const fonts = {
   heading: 'Dela Gothic One',
   paragraph: 'Nanum Gothic Coding',
@@ -5,6 +7,10 @@ export const fonts = {
   general: 'Assistant',
   secondParagraph: 'Big Shoulders Stencil Display',
   extra: 'Hammersmith'
+}
+
+export const icons = {
+  customerCare: <RIcons.RiCustomerServiceLine />  
 }
 
 export const colors = {
@@ -38,6 +44,7 @@ export const metrics = {
   biggerFont: '3.5em',
   border: '.2em'
 }
+
 
 export const popularCars = [
   {
