@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
-import { colors, fonts, metrics } from '../components/constants'
+import styled, { css } from "styled-components";
+import { colors, fonts, metrics } from "../components/constants";
 
 export const HeaderStyle = styled.div(
   ({ bgImage }) => css`
     height: 80vh;
     background: linear-gradient(to right, #1a1a1a50, #f3790720),
-      url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624443336/car-rental/kevin-bonilla-YPfnvLc3bbQ-unsplash_i0iiop.jpg')
+      url("https://res.cloudinary.com/dyj6pqx6d/image/upload/v1624443336/car-rental/kevin-bonilla-YPfnvLc3bbQ-unsplash_i0iiop.jpg")
         scroll center no-repeat;
     background-size: cover;
     /* background-attachment: ; */
@@ -52,7 +52,7 @@ export const HeaderStyle = styled.div(
       margin-top: 3em;
     }
   `
-)
+);
 
 export const InputStyle = styled.input(
   ({ bgColor }) => css`
@@ -66,11 +66,29 @@ export const InputStyle = styled.input(
     border-radius: ${metrics.radius};
     transition: background 200ms ease-in;
 
+    &.password {
+      letter-spacing: 0.5rem;
+    }
+
     &:focus {
       background: ${colors.lightBlack};
     }
   `
-)
+);
+
+export const TextButton = styled.button(
+  () => css`
+    padding: 0.5rem;
+    background: transparent;
+    color: ${colors.white};
+    transition: color 200ms ease-in;
+    font-family: ${fonts.general};
+    &:hover {
+      cursor: pointer;
+      color: ${colors.darkOrange};
+    }
+  `
+);
 
 export const Button = styled.button(
   ({ bgColor }) => css`
@@ -84,16 +102,43 @@ export const Button = styled.button(
     border: ${metrics.border} solid transparent;
     outline: 0;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background: ${colors.ghostWhite};
       outline: 0;
-      border: ${metrics.border} solid ${colors.orange};
+      /* border: ${metrics.border} solid ${colors.orange}; */
       color: ${colors.orange};
       cursor: pointer;
     }
+
+    &:active {
+      transform: translateY(0.1rem);
+    }
   `
-)
+);
+
+export const IconButton = styled.button(
+  ({ round }) => css`
+    height: 1rem;
+    width: 1rem;
+    padding: 1rem;
+    border-radius: ${round ? "50%" : metrics.radius};
+    /* background: ${colors.lightBlack}; */
+    display: flex;
+    border: 0.2rem solid ${colors.lightPurple};
+    justify-content: center;
+    align-items: center;
+    color: ${colors.lightGreen};
+    font-weight: 600;
+    transition: color 200ms ease-in, border-color 200ms ease-in;
+
+    &:hover {
+      background: ${colors.orange};
+      cursor: pointer;
+      color: ${colors.white};
+      border-color: ${colors.lightOrange};
+    }
+  `
+);
 
 export const Title = styled.h1(
   ({ font, color }) => css`
@@ -101,41 +146,45 @@ export const Title = styled.h1(
     letter-spacing: 2px;
     font-family: ${fonts.heading};
   `
-)
+);
 
 export const SectionTitle = styled.h2(
-  ({ color }) => css`
+  ({ color, size }) => css`
     font-family: ${fonts.secondParagraph};
     letter-spacing: 1px;
-    font-size: ${metrics.bigFont};
+    font-size: ${size || metrics.bigFont};
   `
-)
+);
 
 export const Paragraph = styled.p(
   ({ font, size, color }) => css`
     font-size: ${size || 1}em;
     color: ${colors.orange};
+    font-family: ${fonts.paragraph};
   `
-)
+);
 
 export const PageContainer = styled.div(
   ({ full }) => css`
-    /* height: 100vh; */
+    min-height: 100vh;
     background: ${colors.lightBlack};
+    color: ${colors.white};
     overflow-x: hidden;
   `
-)
+);
 
 export const LandingContainer = styled.div(
   ({ full }) => css`
     /* height: 0vh; */
-    background: ${colors.black};
-    color: ${colors.white};
+    background: ${colors.white};
+    color: ${colors.black};
     /* overflow-y: scroll; */
 
     /* Styling for the landing page content */
     main {
       .how_it_works {
+        background: ${colors.black};
+        color: ${colors.white};
         display: flex;
         font-family: ${fonts.general};
         justify-content: center;
@@ -165,7 +214,7 @@ export const LandingContainer = styled.div(
           padding: 2em 0;
         }
 
-        // STYLING FOR THE SWIPER CONTAINER 
+        // STYLING FOR THE SWIPER CONTAINER
 
         .swiper-container {
           width: 25em;
@@ -187,7 +236,8 @@ export const LandingContainer = styled.div(
             margin: 3em 0 1em;
           }
 
-          .info, .actions {
+          .info,
+          .actions {
             display: flex;
             align-items: center;
             font-family: ${fonts.paragraph};
@@ -205,7 +255,7 @@ export const LandingContainer = styled.div(
             /* font-size: ${metrics.bigFont}; */
             display: flex;
             flex-direction: column;
-            
+
             .price {
               font-size: ${metrics.bigFont};
             }
@@ -214,7 +264,6 @@ export const LandingContainer = styled.div(
               color: ${colors.lightOrange};
               align-self: flex-end;
             }
-            
           }
 
           img {
@@ -222,12 +271,11 @@ export const LandingContainer = styled.div(
             width: 100%;
             display: block;
           }
-
         }
       }
     }
   `
-)
+);
 
 export const Container = styled.section(
   () => css`
@@ -236,13 +284,13 @@ export const Container = styled.section(
     color: black;
     padding: 1rem;
   `
-)
+);
 
 export const TitleContainer = styled.div(
   () => css`
     text-align: center;
   `
-)
+);
 
 export const SWhyUs = styled.section(
   () => css`
@@ -252,25 +300,25 @@ export const SWhyUs = styled.section(
 
     .reasons {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       padding: 1rem;
-      /* gap: 1rem; */
+      gap: 2rem;
     }
 
     .reason {
       height: 200px;
       padding: 1rem;
       border-radius: 1rem;
-      border: .5px solid #E2E2E2;
-      
+      border: 0.5px solid #e2e2e2;
+
       .icon {
         padding: 1rem;
         border-radius: 1rem;
-        background: #5EF81150;
+        background: #5ef81150;
         font-weight: 800;
         display: inline-flex;
       }
-      
+
       p {
         font-weight: bold;
         /* position: fixed; */
@@ -278,6 +326,151 @@ export const SWhyUs = styled.section(
       }
     }
   `
-)
+);
 
+export const SDiscover = styled.div(
+  () => css`
+    margin: 1rem 4rem;
+    background: ${colors.black};
+    color: ${colors.white};
+    border-radius: 1rem;
+    padding: 4rem 0;
+    text-align: center;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
 
+    p {
+      margin: 1rem 0;
+    }
+  `
+);
+
+export const SFooter = styled.footer(
+  () => css`
+    /* border: 1px solid aquamarine; */
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 3rem;
+  `
+);
+
+export const SNavbar = styled.nav(
+  () => css`
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    color: ${colors.white};
+    background: ${colors.lightBlack};
+    font-family: ${fonts.paragraph};
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      list-style-type: none;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navlinks {
+      border-bottom: 2px solid transparent;
+      padding: 0.5rem 0;
+      transition: border 200ms ease-in;
+      &:hover {
+        border-color: ${colors.yellow};
+      }
+    }
+  `
+);
+
+export const SSubscribeForm = styled.section(
+  () => css`
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    .subscription_form {
+      margin-top: 1rem;
+      border: 2px solid ${colors.lightOrange};
+      border-radius: 0.4rem;
+      overflow: hidden;
+      transition: border-color 200ms ease-in-out;
+
+      &:hover {
+        border-color: ${colors.midGreen};
+      }
+    }
+  `
+);
+
+export const SubscribeInput = styled.input(
+  () => css`
+    padding: 1rem 1.5rem;
+    background: transparent;
+    outline: 0;
+  `
+);
+
+export const SAuthModal = styled.div(
+  () => css`
+    position: absolute;
+    top: 0;
+    overflow: none;
+    height: 100vh;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    background: ${colors.lightBlack};
+    font-family: ${fonts.general};
+    /* opacity: .8; */
+
+    .closeModal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  `
+);
+
+export const SForm = styled.form(
+  () => css`
+    display: flex;
+    flex-direction: column;
+  `
+);
+
+export const SAuthForm = styled.form(
+  () => css`
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    gap: 1rem;
+    opacity: 1;
+    background: ${colors.black};
+    padding: 1rem;
+    border-radius: ${metrics.radius};
+
+    .inputGroup {
+      display: flex;
+      flex-direction: column;
+      label {
+        margin-bottom: 0.5rem;
+        color: ${colors.darkOrange};
+        font-size: 0.8rem;
+      }
+    }
+  `
+);
+
+export const Row = styled.div(
+  ({ justify }) => css`
+    display: flex;
+    justify-content: ${justify || "inherit"};
+  `
+);
