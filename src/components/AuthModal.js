@@ -9,11 +9,7 @@ const AuthModal = () => {
   const { authContext, setIsModalOpen } = useContext(AuthModalContext);
   return (
     <SAuthModal>
-      <IconButton
-        onClick={() => setIsModalOpen(false)}
-        round
-        className="closeModal"
-      >
+      <IconButton onClick={() => setIsModalOpen(false)} className="closeModal">
         X
       </IconButton>
       {authContext === "login" ? (

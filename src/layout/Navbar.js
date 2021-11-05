@@ -12,6 +12,9 @@ const Navbar = () => {
           <h2>LOGO</h2>
         </Link>
       </div>
+      <div className="searchBar">
+        <h3>SPACE FOR SEARCH BAR</h3>
+      </div>
       <ul className="navbar">
         <li className="navlinks">
           <Link to="/rentals">Rentals</Link>

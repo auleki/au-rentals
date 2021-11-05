@@ -14,19 +14,15 @@ export const HeaderStyle = styled.div(
     align-items: center;
     flex-direction: column;
     border-bottom: 2px solid ${colors.orange};
-
     .header_text {
       text-align: center;
-
       h1 {
         font-family: ${fonts.heading};
         font-size: ${metrics.biggerFont};
-
         span {
           color: ${colors.orange};
         }
       }
-
       p {
         /* background: #e85d0460; */
         background: #1a1a1a60;
@@ -38,14 +34,12 @@ export const HeaderStyle = styled.div(
         letter-spacing: 1px;
         color: ${colors.ghostWhite};
         border-radius: ${metrics.radius};
-
         span {
           font-weight: 800;
           margin: 0 0.25em;
         }
       }
     }
-
     .header_form {
       display: flex;
       gap: 1em;
@@ -65,11 +59,9 @@ export const InputStyle = styled.input(
     outline: 0;
     border-radius: ${metrics.radius};
     transition: background 200ms ease-in;
-
     &.password {
       letter-spacing: 0.5rem;
     }
-
     &:focus {
       background: ${colors.lightBlack};
     }
@@ -101,7 +93,6 @@ export const Button = styled.button(
     font-size: ${metrics.smallFont};
     border: ${metrics.border} solid transparent;
     outline: 0;
-
     &:hover {
       background: ${colors.ghostWhite};
       outline: 0;
@@ -109,7 +100,6 @@ export const Button = styled.button(
       color: ${colors.orange};
       cursor: pointer;
     }
-
     &:active {
       transform: translateY(0.1rem);
     }
@@ -130,7 +120,6 @@ export const IconButton = styled.button(
     color: ${colors.lightGreen};
     font-weight: 600;
     transition: color 200ms ease-in, border-color 200ms ease-in;
-
     &:hover {
       background: ${colors.orange};
       cursor: pointer;
@@ -179,7 +168,6 @@ export const LandingContainer = styled.div(
     background: ${colors.white};
     color: ${colors.black};
     /* overflow-y: scroll; */
-
     /* Styling for the landing page content */
     main {
       .how_it_works {
@@ -192,7 +180,6 @@ export const LandingContainer = styled.div(
         gap: 1em;
         height: 30vh;
         padding: 1em;
-
         .step {
           width: 22em;
           background: ${colors.lightBlack};
@@ -202,20 +189,16 @@ export const LandingContainer = styled.div(
           margin-top: 2em;
         }
       }
-
       .popular_cars {
         background: ${colors.white};
         /* background: ${colors.black}; */
         color: ${colors.black};
         padding: 1em;
-
         .title {
           text-align: center;
           padding: 2em 0;
         }
-
         // STYLING FOR THE SWIPER CONTAINER
-
         .swiper-container {
           width: 25em;
           background-color: ${colors.lightBlack};
@@ -228,14 +211,11 @@ export const LandingContainer = styled.div(
           align-items: center;
           justify-content: center;
         }
-
         .swiper-slide {
           color: ${colors.white};
-
           .actions {
             margin: 3em 0 1em;
           }
-
           .info,
           .actions {
             display: flex;
@@ -243,29 +223,24 @@ export const LandingContainer = styled.div(
             font-family: ${fonts.paragraph};
             justify-content: space-around;
           }
-
           .model {
             font-family: ${fonts.secondParagraph};
             font-size: ${metrics.bigFont};
             color: ${colors.orange};
             font-weight: 400;
           }
-
           .price_section {
             /* font-size: ${metrics.bigFont}; */
             display: flex;
             flex-direction: column;
-
             .price {
               font-size: ${metrics.bigFont};
             }
-
             span {
               color: ${colors.lightOrange};
               align-self: flex-end;
             }
           }
-
           img {
             object-fit: cover;
             width: 100%;
@@ -297,20 +272,17 @@ export const SWhyUs = styled.section(
     background-color: white;
     color: black;
     padding: 1rem;
-
     .reasons {
       display: flex;
       justify-content: center;
       padding: 1rem;
       gap: 2rem;
     }
-
     .reason {
       height: 200px;
       padding: 1rem;
       border-radius: 1rem;
       border: 0.5px solid #e2e2e2;
-
       .icon {
         padding: 1rem;
         border-radius: 1rem;
@@ -318,7 +290,6 @@ export const SWhyUs = styled.section(
         font-weight: 800;
         display: inline-flex;
       }
-
       p {
         font-weight: bold;
         /* position: fixed; */
@@ -337,7 +308,6 @@ export const SDiscover = styled.div(
     padding: 4rem 0;
     text-align: center;
     box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
-
     p {
       margin: 1rem 0;
     }
@@ -361,12 +331,10 @@ export const SNavbar = styled.nav(
     color: ${colors.white};
     background: ${colors.lightBlack};
     font-family: ${fonts.paragraph};
-
     a {
       text-decoration: none;
       color: inherit;
     }
-
     .navbar {
       list-style-type: none;
       display: flex;
@@ -374,7 +342,6 @@ export const SNavbar = styled.nav(
       align-items: center;
       justify-content: center;
     }
-
     .navlinks {
       border-bottom: 2px solid transparent;
       padding: 0.5rem 0;
@@ -391,14 +358,12 @@ export const SSubscribeForm = styled.section(
     text-align: center;
     display: flex;
     flex-direction: column;
-
     .subscription_form {
       margin-top: 1rem;
       border: 2px solid ${colors.lightOrange};
       border-radius: 0.4rem;
       overflow: hidden;
       transition: border-color 200ms ease-in-out;
-
       &:hover {
         border-color: ${colors.midGreen};
       }
@@ -429,7 +394,6 @@ export const SAuthModal = styled.div(
     background: ${colors.lightBlack};
     font-family: ${fonts.general};
     /* opacity: .8; */
-
     .closeModal {
       position: absolute;
       top: 1rem;
@@ -455,7 +419,6 @@ export const SAuthForm = styled.form(
     background: ${colors.black};
     padding: 1rem;
     border-radius: ${metrics.radius};
-
     .inputGroup {
       display: flex;
       flex-direction: column;
@@ -472,5 +435,39 @@ export const Row = styled.div(
   ({ justify }) => css`
     display: flex;
     justify-content: ${justify || "inherit"};
+  `
+);
+
+export const SRentals = styled.div(
+  () => css`
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 100vh;
+    border-top: 2px solid ${colors.altWhite};
+
+    .rentals,
+    .filter {
+      padding: 2rem;
+    }
+
+    .rentals {
+      display: flex;
+      flex: 1 1 50rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter {
+      border-right: 2px solid ${colors.darkOrange};
+    }
+  `
+);
+
+export const SCarCard = styled.div(
+  () => css`
+    /* background: ${colors.altWhite}; */
+    color: ${colors.orange};
+    border: 2px solid ${colors.black};
+    height: 200px;
   `
 );
