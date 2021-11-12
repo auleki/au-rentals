@@ -1,20 +1,14 @@
 import CarCard from "../components/CarCard";
-import { SRentals } from "../components/StyledComponents";
+import { InputStyle, Row, SRentals } from "../components/StyledComponents";
+import { colors } from "../components/constants";
+import FilterSection from "../components/FilterSection";
+import CarRentals from "../components/CarRentals";
 
 const Rentals = () => {
   return (
     <SRentals>
-      <section className="filter">
-        <h2>Filter Section</h2>
-      </section>
-      <section className="rentals">
-        <CarCard />
-        <CarCard />
-        <CarCard />
-        <CarCard />
-        <CarCard />
-        <CarCard />
-      </section>
+      <FilterSection />
+      <CarRentals />
     </SRentals>
   );
 };

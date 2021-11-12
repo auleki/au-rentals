@@ -49,9 +49,10 @@ export const HeaderStyle = styled.div(
 );
 
 export const InputStyle = styled.input(
-  ({ bgColor }) => css`
+  ({ bgColor, small, hoverBg }) => css`
     /* width: 100%; */
     /* height: 4em; */
+    width: ${small ? "5rem" : "inherit"};
     padding: 1em;
     background: ${colors.black};
     font-family: ${fonts.paragraph};
@@ -63,7 +64,7 @@ export const InputStyle = styled.input(
       letter-spacing: 0.5rem;
     }
     &:focus {
-      background: ${colors.lightBlack};
+      background: ${hoverBg || colors.lightBlack};
     }
   `
 );
@@ -327,7 +328,10 @@ export const SNavbar = styled.nav(
   () => css`
     display: flex;
     padding: 1rem 2rem;
+    /* position: sticky; */
+    /* top: 1rem; */
     justify-content: space-between;
+    align-items: center;
     color: ${colors.white};
     background: ${colors.lightBlack};
     font-family: ${fonts.paragraph};
@@ -444,38 +448,52 @@ export const SRentals = styled.div(
     display: grid;
     grid-template-columns: 20% 80%;
     height: 100vh;
+    font-family: ${fonts.general};
     border-top: 2px solid ${colors.altWhite};
     /* padding-bottom: 10rem; */
     overflow-y: hidden;
 
-    .rentals,
-    .filter {
+    /* .rentals,
+    .filters {
       padding: 2rem;
     }
 
-    .rentals {
-      display: flex;
-      flex: 1 1 50rem;
-      gap: 1rem;
-      overflow-y: scroll;
-      flex-wrap: wrap;
-    }
-
-    .filter {
+    .filters {
       border-right: 2px solid ${colors.darkOrange};
-    }
+      overflow-x: hidden;
+    } */
+  `
+);
+
+export const SCarRentals = styled.div(
+  () => css`
+    display: flex;
+    flex: 1 1 50rem;
+    gap: 1rem;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    padding: 2rem;
+  `
+);
+
+export const SFilterSection = styled.div(
+  () => css`
+    border-right: 2px solid ${colors.darkOrange};
+    overflow-x: hidden;
+    padding: 2rem;
   `
 );
 
 export const SCarCard = styled.div(
   () => css`
     background: ${colors.black};
+    margin-bottom: 2rem;
     font-family: ${fonts.general};
     color: ${colors.white};
     border-radius: 10px;
     transition: transform 200ms ease-in;
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 2rem;
@@ -516,8 +534,11 @@ export const SCarCard = styled.div(
       }
       .pricePerDay {
         font-size: 2.5rem;
+        font-weight: 600;
         .text {
           font-size: 1rem;
+          font-weight: 400;
+          color: ${colors.lightGreen};
         }
       }
     }

@@ -1,16 +1,23 @@
-import { icons, colors } from "./constants";
+import { useState } from "react";
+import { icons } from "./constants";
 import { SCarCard, Row, Button, IconButton } from "./StyledComponents";
 import FordImg from "../assets/ford.jpg";
 
 const CarCard = () => {
+  const [favorited, setFavorited] = useState(true);
+
+  function toggleFavorited() {
+    setFavorited(!favorited);
+  }
+
   return (
     <SCarCard>
-      {/* <section className="title"> */}
       <Row justify="space-between" alignment="center">
         <h4 className="carTitle">FORD EXPLORER 2018</h4>
-        <button className="icon">{icons.unFavorited}</button>
+        <button className="icon" onClick={toggleFavorited}>
+          {favorited ? icons.favorited : icons.unFavorited}
+        </button>
       </Row>
-      {/* </section> */}
       <img src={FordImg} alt="car" className="carImage" />
       <div className="info">
         <Row justify="space-between">
