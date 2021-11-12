@@ -107,23 +107,23 @@ export const Button = styled.button(
 );
 
 export const IconButton = styled.button(
-  ({ round }) => css`
+  ({ round, bg, color }) => css`
     height: 1rem;
     width: 1rem;
     padding: 1rem;
     border-radius: ${round ? "50%" : metrics.radius};
-    /* background: ${colors.lightBlack}; */
+    background: ${bg || colors.white};
     display: flex;
     border: 0.2rem solid ${colors.lightPurple};
     justify-content: center;
     align-items: center;
-    color: ${colors.lightGreen};
+    color: ${color || colors.lightGreen};
     font-weight: 600;
     transition: color 200ms ease-in, border-color 200ms ease-in;
     &:hover {
       background: ${colors.orange};
       cursor: pointer;
-      color: ${colors.white};
+      color: ${color || colors.white};
       border-color: ${colors.lightOrange};
     }
   `
@@ -158,7 +158,7 @@ export const PageContainer = styled.div(
     min-height: 100vh;
     background: ${colors.lightBlack};
     color: ${colors.white};
-    overflow-x: hidden;
+    overflow: hidden;
   `
 );
 
@@ -432,9 +432,10 @@ export const SAuthForm = styled.form(
 );
 
 export const Row = styled.div(
-  ({ justify }) => css`
+  ({ justify, alignment }) => css`
     display: flex;
     justify-content: ${justify || "inherit"};
+    align-items: ${alignment || "inherit"};
   `
 );
 
@@ -444,6 +445,8 @@ export const SRentals = styled.div(
     grid-template-columns: 20% 80%;
     height: 100vh;
     border-top: 2px solid ${colors.altWhite};
+    /* padding-bottom: 10rem; */
+    overflow-y: hidden;
 
     .rentals,
     .filter {
@@ -454,6 +457,7 @@ export const SRentals = styled.div(
       display: flex;
       flex: 1 1 50rem;
       gap: 1rem;
+      overflow-y: scroll;
       flex-wrap: wrap;
     }
 
@@ -465,9 +469,63 @@ export const SRentals = styled.div(
 
 export const SCarCard = styled.div(
   () => css`
-    /* background: ${colors.altWhite}; */
-    color: ${colors.orange};
-    border: 2px solid ${colors.black};
-    height: 200px;
+    background: ${colors.black};
+    font-family: ${fonts.general};
+    color: ${colors.white};
+    border-radius: 10px;
+    transition: transform 200ms ease-in;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem;
+    padding-bottom: 0;
+    gap: 1rem;
+
+    &:hover {
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    // ICON BUTTON
+    .icon {
+      padding: 0.5rem;
+      transition: transform 50ms ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background: ${colors.lightBlack};
+        color: ${colors.white};
+      }
+
+      &:active {
+        transform: translateY(0.3rem);
+      }
+    }
+
+    .info {
+      .describer {
+        color: #333;
+        font-weight: 800;
+      }
+      .value {
+        color: ${colors.white};
+        font-weight: 400;
+      }
+      div {
+        margin-bottom: 1rem;
+      }
+      .pricePerDay {
+        font-size: 2.5rem;
+        .text {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .carImage {
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+    }
   `
 );
