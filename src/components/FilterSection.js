@@ -1,13 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { colors, icons } from "./constants";
 import { Button, InputStyle, Row, SFilterSection } from "./StyledComponents";
 
 const FilterSection = () => {
-  const [filter, setFilter] = useState({});
+  const [priceFilter, setPriceFilter] = useState({ min: null, max: null });
+  const [transmissionFilter, setTransmissionFilter] = useState({
+    manual: false,
+    automatic: false,
+  });
+  const [yearFilter, setYearFilter] = useState({
+    min: null,
+    max: null,
+  });
+  const [brandFilter, setBrandFilter] = useState("");
 
-  function handleFilter(e) {
-    console.log("ELEMENT NAME", e.target.name);
-    console.log("ELEMENT VALUE", e.target.value);
+  function handleFilter({ target: { name, value } }) {
+    console.log(name);
+    // switch(eventName.target.name)
+  }
+
+  function searchDB(filterState) {
+    console.log("A search is being made");
   }
 
   return (
@@ -21,6 +34,8 @@ const FilterSection = () => {
             name="transmission"
             id="transmission"
             value="automatic"
+            checked={transmissionFilter.manual}
+            onChange={handleFilter}
           />
           <label htmlFor="automatic">Automatic</label>
         </div>
@@ -29,7 +44,9 @@ const FilterSection = () => {
             type="checkbox"
             name="transmission"
             id="transmission"
+            checked={transmissionFilter.manual}
             value="manual"
+            onChange={handleFilter}
           />
           <label htmlFor="manual">Manual</label>
         </div>
@@ -37,8 +54,26 @@ const FilterSection = () => {
       <section className="filter">
         <h4 className="filterName">Year</h4>
         <Row>
-          <InputStyle small hoverBg={colors.orange} placeholder="min" />
-          <InputStyle small hoverBg={colors.orange} placeholder="max" />
+          <div className="selectGroup">
+            <label htmlFor="">Min Year</label>
+            <select name="minYear" onChange={handleFilter}>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+            </select>
+          </div>
+          <div className="selectGroup">
+            <label htmlFor="">Max Year</label>
+            <select name="maxYear" onChange={handleFilter}>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+            </select>
+          </div>
         </Row>
       </section>
       <section className="filter">
@@ -59,12 +94,28 @@ const FilterSection = () => {
       <section className="filter">
         <h4 className="filterName">Price/day</h4>
         <Row>
-          <InputStyle hoverBg={colors.orange} small placeholder="min" />
-          <InputStyle hoverBg={colors.orange} small placeholder="max" />
+          <InputStyle
+            onChange={handleFilter}
+            hoverBg={colors.orange}
+            small
+            type="number"
+            name="minPrice"
+            value={priceFilter.min}
+            placeholder="min"
+          />
+          <InputStyle
+            onChange={handleFilter}
+            hoverBg={colors.orange}
+            small
+            type="number"
+            name="maxPrice"
+            value={priceFilter.max}
+            placeholder="max"
+          />
         </Row>
       </section>
       <div className="buttons">
-        <Button>
+        <Button onClick={searchDB}>
           <span className="text">Search</span>
           <span className="icon">{icons.search}</span>
         </Button>

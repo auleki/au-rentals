@@ -1,4 +1,6 @@
 import * as RIcons from "react-icons/ri";
+import * as FCIcons from "react-icons/fc";
+import * as GIIcons from "react-icons/gi";
 
 export const fonts = {
   heading: "Dela Gothic One",
@@ -15,6 +17,8 @@ export const icons = {
   unFavorited: <RIcons.RiStarLine />,
   search: <RIcons.RiSearch2Line />,
   rightArrow: <RIcons.RiArrowRightLine />,
+  car: <GIIcons.GiCityCar />,
+  carKey: <GIIcons.GiCarKey />,
 };
 
 export const colors = {
@@ -37,6 +41,7 @@ export const colors = {
   darkRed: "#9D0208",
   red: "#D00000",
   yellow: "#FFC53A",
+  gray: "#8A8A8A",
 };
 
 export const metrics = {

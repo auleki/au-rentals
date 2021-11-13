@@ -85,9 +85,10 @@ export const TextButton = styled.button(
 
 export const Button = styled.button(
   ({ bgColor }) => css`
-    background: ${colors.orange};
+    background: ${colors.white};
+    /* background: transparent; */
     color: ${colors.altWhite};
-    padding: 0.5em 1.2em;
+    /* padding: 0.5em 1.2em; */
     font-family: ${fonts.general};
     display: flex;
     align-items: center;
@@ -98,19 +99,25 @@ export const Button = styled.button(
     font-size: ${metrics.smallFont};
     border: ${metrics.border} solid transparent;
     outline: 0;
+    overflow: hidden;
     &:hover {
       background: ${colors.ghostWhite};
       outline: 0;
       /* border: ${metrics.border} solid ${colors.orange}; */
-      color: ${colors.orange};
+      color: ${colors.white};
       cursor: pointer;
       box-shadow: 2px 4px 10px 5px rgba(5, 5, 5, 0.9);
 
+      .text {
+        background: ${colors.darkGreen};
+      }
+
       .icon {
-        transform: translateX(0.3rem) scale(1.3);
-        background: transparent;
+        transform: translate(0, 0.2rem) scale(1.3);
+        color: ${colors.red};
+
         &:hover {
-          transform: scale(1);
+          /* transform: scale(1); */
         }
       }
     }
@@ -118,10 +125,18 @@ export const Button = styled.button(
       transform: translateY(0.1rem);
     }
 
+    .text {
+      background: ${colors.orange};
+      padding: 0.5rem 1rem;
+    }
+
     .icon {
-      /* border: 1px solid green; */
+      background: ${colors.white};
       position: relative;
-      top: 0.15rem;
+      /* top: 0.15rem; */
+      color: ${colors.orange};
+      /* font-size: 1rem; */
+      padding: 0.5rem 1rem;
       transform: scale(1.1);
       transition: transform 200ms ease-out;
     }
@@ -468,22 +483,12 @@ export const Row = styled.div(
 export const SRentals = styled.div(
   () => css`
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 250px 100%;
     height: 100vh;
     font-family: ${fonts.general};
     border-top: 2px solid ${colors.altWhite};
     /* padding-bottom: 10rem; */
-    overflow-y: hidden;
-
-    /* .rentals,
-    .filters {
-      padding: 2rem;
-    }
-
-    .filters {
-      border-right: 2px solid ${colors.darkOrange};
-      overflow-x: hidden;
-    } */
+    overflow: hidden;
   `
 );
 
@@ -505,8 +510,10 @@ export const SFilterSection = styled.div(
     padding: 2rem;
 
     .filter {
-      h4 {
+      .filterName {
+        color: ${colors.gray};
         margin: 1rem 0 0.5rem;
+        font-weight: 400;
       }
       .checkGroup {
         margin-bottom: 0.5rem;

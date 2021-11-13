@@ -42,7 +42,7 @@ const CarCard = () => {
           </span>
           <Button>
             <span className="text">Rent Car</span>
-            <span className="icon">{icons.rightArrow}</span>
+            <span className="icon">{icons.car}</span>
           </Button>
         </Row>
       </div>

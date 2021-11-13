@@ -10,6 +10,9 @@ const CarRentals = () => {
       <CarCard />
       <CarCard />
       <CarCard />
+      <CarCard />
+      <CarCard />
+      <CarCard />
     </SCarRentals>
   );
 };
