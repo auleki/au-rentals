@@ -14,9 +14,40 @@ const FilterSection = () => {
   });
   const [brandFilter, setBrandFilter] = useState("");
 
+  useEffect(() => {
+    logStates();
+  }, [priceFilter, brandFilter, yearFilter, transmissionFilter]);
+
+  function logStates() {
+    console.log("PRICE FILTER", priceFilter);
+    console.log("TRANMISSION FILTER", transmissionFilter);
+    console.log("YEAR FILTER", yearFilter);
+    console.log("BRAND FILTER", brandFilter);
+  }
+
   function handleFilter({ target: { name, value } }) {
-    console.log(name);
-    // switch(eventName.target.name)
+    // console.log(name);
+    switch (name) {
+      case "transmission":
+        setTransmissionFilter({
+          [value]: !transmissionFilter[value],
+        });
+        break;
+      case "brand":
+        setBrandFilter(value);
+        break;
+      case "minYear":
+        console.log(name, value);
+      // if (name === "minYear") {
+      //   setYearFilter({ min: value });
+      // } else if (name === "maxYear") {
+      //   setYearFilter({ max: value });
+      // }
+      case "maxYear":
+        console.log(name, value);
+      default:
+        return;
+    }
   }
 
   function searchDB(filterState) {
@@ -32,7 +63,7 @@ const FilterSection = () => {
           <input
             type="checkbox"
             name="transmission"
-            id="transmission"
+            id="automatic"
             value="automatic"
             checked={transmissionFilter.manual}
             onChange={handleFilter}
@@ -43,7 +74,7 @@ const FilterSection = () => {
           <input
             type="checkbox"
             name="transmission"
-            id="transmission"
+            id="manual"
             checked={transmissionFilter.manual}
             value="manual"
             onChange={handleFilter}
