@@ -13,6 +13,8 @@ export const icons = {
   customerCare: <RIcons.RiCustomerServiceLine />,
   favorited: <RIcons.RiStarSFill />,
   unFavorited: <RIcons.RiStarLine />,
+  search: <RIcons.RiSearch2Line />,
+  rightArrow: <RIcons.RiArrowRightLine />,
 };
 
 export const colors = {

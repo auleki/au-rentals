@@ -14,7 +14,7 @@ const CarCard = () => {
     <SCarCard>
       <Row justify="space-between" alignment="center">
         <h4 className="carTitle">FORD EXPLORER 2018</h4>
-        <button className="icon" onClick={toggleFavorited}>
+        <button className="favorite icon" onClick={toggleFavorited}>
           {favorited ? icons.favorited : icons.unFavorited}
         </button>
       </Row>
@@ -36,11 +36,14 @@ const CarCard = () => {
             Gear: <span className="value">Automatic</span>
           </span>
         </Row>
-        <Row justify="space-between" alignment="center">
+        <Row justify="space-between" gap="1rem" alignment="center">
           <span className="pricePerDay">
-            N5,000/ <span className="text">day</span>
+            N5,000/<span className="text">day</span>
           </span>
-          <Button>Rent Car</Button>
+          <Button>
+            <span className="text">Rent Car</span>
+            <span className="icon">{icons.rightArrow}</span>
+          </Button>
         </Row>
       </div>
     </SCarCard>

@@ -1,29 +1,37 @@
-import { colors } from "./constants";
-import { InputStyle, Row, SFilterSection } from "./StyledComponents";
+import { useState } from "react";
+import { colors, icons } from "./constants";
+import { Button, InputStyle, Row, SFilterSection } from "./StyledComponents";
 
 const FilterSection = () => {
+  const [filter, setFilter] = useState({});
+
+  function handleFilter(e) {
+    console.log("ELEMENT NAME", e.target.name);
+    console.log("ELEMENT VALUE", e.target.value);
+  }
+
   return (
     <SFilterSection>
       <h2>Filter by</h2>
       <section className="filter">
         <h4 className="filterName">Transmission</h4>
-        <div className="inputGroup">
-          <label htmlFor="automatic">Automatic</label>
+        <div className="checkGroup">
           <input
             type="checkbox"
             name="transmission"
             id="transmission"
             value="automatic"
           />
+          <label htmlFor="automatic">Automatic</label>
         </div>
-        <div className="inputGroup">
-          <label htmlFor="manual">Manual</label>
+        <div className="checkGroup">
           <input
             type="checkbox"
             name="transmission"
             id="transmission"
             value="manual"
           />
+          <label htmlFor="manual">Manual</label>
         </div>
       </section>
       <section className="filter">
@@ -35,8 +43,8 @@ const FilterSection = () => {
       </section>
       <section className="filter">
         <h4 className="filterName">Brand</h4>
-        <div className="dropdownGroup">
-          <select name="brand">
+        <div className="selectGroup">
+          <select name="brand" onChange={handleFilter}>
             <option value="" selected>
               Pick a brand
             </option>
@@ -55,6 +63,12 @@ const FilterSection = () => {
           <InputStyle hoverBg={colors.orange} small placeholder="max" />
         </Row>
       </section>
+      <div className="buttons">
+        <Button>
+          <span className="text">Search</span>
+          <span className="icon">{icons.search}</span>
+        </Button>
+      </div>
     </SFilterSection>
   );
 };

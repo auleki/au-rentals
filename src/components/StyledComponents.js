@@ -87,8 +87,12 @@ export const Button = styled.button(
   ({ bgColor }) => css`
     background: ${colors.orange};
     color: ${colors.altWhite};
-    padding: 0.8em 1.5em;
+    padding: 0.5em 1.2em;
     font-family: ${fonts.general};
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
     transition: background 200ms ease-in, color 300ms ease-in;
     border-radius: ${metrics.radius};
     font-size: ${metrics.smallFont};
@@ -100,9 +104,26 @@ export const Button = styled.button(
       /* border: ${metrics.border} solid ${colors.orange}; */
       color: ${colors.orange};
       cursor: pointer;
+      box-shadow: 2px 4px 10px 5px rgba(5, 5, 5, 0.9);
+
+      .icon {
+        transform: translateX(0.3rem) scale(1.3);
+        background: transparent;
+        &:hover {
+          transform: scale(1);
+        }
+      }
     }
     &:active {
       transform: translateY(0.1rem);
+    }
+
+    .icon {
+      /* border: 1px solid green; */
+      position: relative;
+      top: 0.15rem;
+      transform: scale(1.1);
+      transition: transform 200ms ease-out;
     }
   `
 );
@@ -436,9 +457,10 @@ export const SAuthForm = styled.form(
 );
 
 export const Row = styled.div(
-  ({ justify, alignment }) => css`
+  ({ justify, alignment, gap }) => css`
     display: flex;
     justify-content: ${justify || "inherit"};
+    gap: ${gap || 0};
     align-items: ${alignment || "inherit"};
   `
 );
@@ -481,6 +503,28 @@ export const SFilterSection = styled.div(
     border-right: 2px solid ${colors.darkOrange};
     overflow-x: hidden;
     padding: 2rem;
+
+    .filter {
+      h4 {
+        margin: 1rem 0 0.5rem;
+      }
+      .checkGroup {
+        margin-bottom: 0.5rem;
+        label {
+          margin-left: 0.5rem;
+        }
+      }
+
+      .selectGroup {
+        select {
+          padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+          outline: none;
+        }
+      }
+    }
+    .buttons {
+      margin-top: 2rem;
+    }
   `
 );
 
@@ -506,13 +550,15 @@ export const SCarCard = styled.div(
 
     // ICON BUTTON
     .icon {
-      padding: 0.5rem;
-      transition: transform 50ms ease-in-out;
+      &.favorite {
+        padding: 0.5rem;
+        transition: transform 50ms ease-in-out;
 
-      &:hover {
-        cursor: pointer;
-        background: ${colors.lightBlack};
-        color: ${colors.white};
+        &:hover {
+          cursor: pointer;
+          background: ${colors.lightBlack};
+          color: ${colors.white};
+        }
       }
 
       &:active {
